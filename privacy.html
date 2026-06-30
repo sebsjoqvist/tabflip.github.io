@@ -4,112 +4,160 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TabFlip — Privacy Policy</title>
+<meta name="description" content="TabFlip privacy policy. No data collected, transmitted, or shared. Everything stays on your device.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     color-scheme: light dark;
     --bg: #ffffff;
-    --fg: #1a1a1f;
-    --muted: #5c5c66;
-    --accent: hsl(240, 70%, 55%);
-    --card-bg: #f6f6f9;
-    --border: rgba(0, 0, 0, 0.08);
+    --fg: #18181b;
+    --muted: #52525b;
+    --accent: #6D4FE8;
+    --accent-soft: rgba(124, 92, 252, 0.10);
+    --accent-line: rgba(124, 92, 252, 0.30);
+    --surface: #f6f6f9;
+    --border: #e6e6ea;
+    --code-bg: #f0f0f4;
+    --tile-ring: rgba(124, 92, 252, 0.22);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0f0f12;
-      --fg: #ececf0;
-      --muted: #9a9aa6;
-      --accent: hsl(240, 75%, 70%);
-      --card-bg: #1a1a20;
-      --border: rgba(255, 255, 255, 0.08);
+      --bg: #09090b;
+      --fg: #fafafa;
+      --muted: #a1a1aa;
+      --accent: #A78BFA;
+      --accent-soft: rgba(124, 92, 252, 0.14);
+      --accent-line: rgba(167, 139, 250, 0.32);
+      --surface: #131316;
+      --border: #232327;
+      --code-bg: #18181b;
+      --tile-ring: rgba(167, 139, 250, 0.28);
     }
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
-    background: var(--bg);
+    background:
+      radial-gradient(900px 520px at 88% -10%, var(--accent-soft), transparent 60%),
+      var(--bg);
+    background-attachment: fixed;
     color: var(--fg);
-    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text",
-          "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    padding: 48px 24px 96px;
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    padding: 40px 24px 120px;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
-  main {
-    max-width: 680px;
-    margin: 0 auto;
+  main { max-width: 680px; margin: 0 auto; }
+
+  /* ---- brand bar ---- */
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 34px;
+    margin-bottom: 34px;
+    border-bottom: 1px solid var(--border);
   }
-  header {
-    margin-bottom: 32px;
+  .brand .tile {
+    width: 42px; height: 42px; flex-shrink: 0;
+    border-radius: 11px;
+    background: linear-gradient(155deg, #1d1d22, #050506);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 0 0 1px var(--tile-ring);
   }
+  .brand .name { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; }
+  .brand .name span { color: var(--accent); }
+  .brand .tag {
+    margin-left: auto;
+    font-family: 'Geist Mono', ui-monospace, monospace;
+    font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 5px 10px; border-radius: 999px;
+  }
+
+  header { margin-bottom: 24px; }
   h1 {
-    font-size: 32px;
-    line-height: 1.2;
-    margin: 0 0 4px;
-    letter-spacing: -0.02em;
+    font-size: 34px; line-height: 1.15; margin: 0 0 6px;
+    letter-spacing: -0.03em; font-weight: 600;
   }
   .updated {
-    color: var(--muted);
-    font-size: 14px;
-    margin: 0;
+    color: var(--muted); font-size: 13px; margin: 0;
+    font-family: 'Geist Mono', ui-monospace, monospace; letter-spacing: .02em;
   }
   h2 {
-    font-size: 20px;
-    margin: 40px 0 12px;
-    letter-spacing: -0.01em;
-  }
-  p {
-    margin: 0 0 16px;
-  }
-  ul {
-    margin: 0 0 16px;
-    padding-left: 22px;
-  }
-  li {
-    margin-bottom: 8px;
-  }
-  li::marker {
+    font-size: 13px; font-weight: 600; margin: 44px 0 14px;
+    letter-spacing: .14em; text-transform: uppercase;
     color: var(--accent);
+    display: flex; align-items: center; gap: 10px;
   }
+  h2::before {
+    content: ""; width: 16px; height: 2px; border-radius: 2px;
+    background: var(--accent); opacity: .55;
+  }
+  p { margin: 0 0 16px; }
+  ul { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 10px; }
+  li::marker { color: var(--accent); }
   code {
-    font-family: "SF Mono", Menlo, Consolas, monospace;
-    font-size: 0.92em;
-    background: var(--card-bg);
+    font-family: 'Geist Mono', ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.86em;
+    background: var(--code-bg);
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 5px;
     padding: 1px 6px;
-  }
-  strong {
-    font-weight: 600;
-  }
-  a {
     color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
   }
-  a:hover {
-    border-bottom-color: var(--accent);
+  strong { font-weight: 600; }
+  a {
+    color: var(--accent); text-decoration: none;
+    border-bottom: 1px solid var(--accent-line);
+    transition: border-color 120ms ease;
   }
+  a:hover { border-bottom-color: var(--accent); }
+
   .short {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px 20px;
-    margin: 0 0 32px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-line);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin: 4px 0 36px;
+    line-height: 1.6;
   }
   .short p { margin: 0; }
+
   footer {
-    margin-top: 64px;
-    padding-top: 24px;
+    margin-top: 72px; padding-top: 26px;
     border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 14px;
+    color: var(--muted); font-size: 13.5px;
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
   }
+  footer .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--muted); opacity: .5; }
 </style>
 </head>
 <body>
 <main>
+  <div class="brand">
+    <div class="tile" aria-hidden="true">
+      <svg viewBox="0 0 128 128" width="32" height="32">
+        <polygon points="30,47 60,35 60,93 30,81" fill="#5B47C9"/>
+        <polygon points="30,47 60,35 60,44 30,56" fill="#6E5AD6"/>
+        <polygon points="68,35 98,47 98,81 68,93" fill="#8B6FF7"/>
+        <polygon points="68,35 98,47 98,56 68,44" fill="#B6A5FB"/>
+        <polygon points="73,54 90,61 90,64 73,57" fill="#3D2F86"/>
+        <polygon points="73,62 85,67 85,70 73,65" fill="#3D2F86"/>
+      </svg>
+    </div>
+    <div class="name">Tab<span>Flip</span></div>
+    <div class="tag">Privacy</div>
+  </div>
+
   <header>
-    <h1>TabFlip Privacy Policy</h1>
+    <h1>Privacy Policy</h1>
     <p class="updated">Last updated: June 30, 2026</p>
   </header>
 
@@ -209,13 +257,14 @@
   <h2>Contact</h2>
   <p>
     Questions? Open an issue at
-    <a href="https://github.com/sebsjoqvist/tabflip.github.io/issues">github.com/sebsjoqvist/chrometabber-v2/issues</a>
+    <a href="https://github.com/sebsjoqvist/tabflip.github.io/issues">github.com/sebsjoqvist/tabflip.github.io/issues</a>
     or email the maintainer listed on that repository.
   </p>
 
   <footer>
-    &copy; 2026 TabFlip. This page is the canonical privacy policy
-    referenced by the TabFlip App Store listing.
+    <span>© 2026 TabFlip</span>
+    <span class="dot"></span>
+    <span>Canonical privacy policy referenced by the TabFlip App Store listing.</span>
   </footer>
 </main>
 </body>
